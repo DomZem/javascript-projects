@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Slider</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			img {
+				max-width: 100%;
+			}
+
+			main {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				padding: 20px;
+			}
+
+			.slider {
+				position: relative;
+				background-color: #f1f1f1;
+				width: 600px;
+				height: 400px;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.slider-navigation {
+				position: absolute;
+
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				width: 100%;
+				bottom: 0;
+
+				transform: translate(0, -50%);
+			}
+
+			.dots {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+
+			.dot {
+				width: 12px;
+				height: 12px;
+				background-color: #0f0e0e;
+				border-radius: 100%;
+				border: 2px solid #f1f1f1;
+				transition: background-color 0.3s ease-in-out;
+				cursor: pointer;
+			}
+
+			.dot.active {
+				background-color: red;
+			}
+
+			.dot:hover {
+				background-color: #1d1c1c;
+			}
+
+			.animation {
+				animation: slider-animation 0.5s ease-in-out;
+			}
+
+			@keyframes slider-animation {
+				0% {
+					transform: translate(0);
+				}
+				100% {
+					transform: translate(100%);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="slider">
+				<div class="slider-navigation">
+					<button class="prev-slide-btn">previous</button>
+
+					<div class="dots"></div>
+
+					<button class="next-slide-btn">next</button>
+				</div>
+			</div>
+		</main>
+
+		<script src="./app.js"></script>
+	</body>
+</html>
