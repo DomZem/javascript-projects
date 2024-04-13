@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <main>
-        <ul class="inputs-container">
-            <li>
-                <input class="input" type="text">
-                <button>x</button>
-            </li>
-    
-            <li>
-                <input class="input" type="text">
-                <button>x</button>
-            </li>
-    
-            <li>
-                <input class="input" type="text">
-                <button>x</button>
-            </li>
-        </ul>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dynamic calculator</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<h1>Dynamic calculator</h1>
 
-        <button class="add-new-input-btn">Dodaj pole</button>
+			<button class="button button-primary add-new-input-btn">Dodaj pole</button>
+		</header>
 
-        <button class="calculate-btn">Przelicz</button>
+		<main class="main">
+			<ul class="summary-list">
+				<li class="summary-list-item">
+					<h2>Sum</h2>
+					<p class="sum-value"></p>
+				</li>
+				<li class="summary-list-item">
+					<h2>Average</h2>
+					<p class="avg-value"></p>
+				</li>
+				<li class="summary-list-item">
+					<h2>Min</h2>
+					<p class="min-value"></p>
+				</li>
+				<li class="summary-list-item">
+					<h2>Max</h2>
+					<p class="max-value"></p>
+				</li>
+			</ul>
 
-        <div>
-            <p>Suma: <span class="sum-value"></span></p>
-            <p>Średnia: <span class="avg-value"></span></p>
-            <p>Min: <span class="min-value"></span></p>
-            <p>Max: <span class="max-value"></span></p>
-        </div>
-    </main>
+			<ul class="input-list">
+				<li class="input-list-item">
+					<input class="input-list-item-input" type="number" />
+					<button class="button button-destructive">Remove</button>
+				</li>
+				<li class="input-list-item">
+					<input class="input-list-item-input" type="number" />
+					<button class="button button-destructive">Remove</button>
+				</li>
+				<li class="input-list-item">
+					<input class="input-list-item-input" type="number" />
+					<button class="button button-destructive">Remove</button>
+				</li>
+			</ul>
 
-    <script src="./app.js"></script>
-</body>
+			<!-- <button class="calculate-btn">Przelicz</button> -->
+		</main>
+
+		<script src="./app.js"></script>
+	</body>
 </html>
