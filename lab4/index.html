@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NotePocket</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="header-content">
+				<div class="header-icon">
+					<i class="fa-solid fa-note-sticky"></i>
+				</div>
+				<h1>NotePocket</h1>
+			</div>
+
+			<button class="button button-primary create-note-btn">create note</button>
+		</header>
+
+		<main class="main">
+			<section>
+				<h3>Filter notes</h3>
+				<div class="note-filters">
+					<div class="input-field">
+						<label class="label" for="note-filter-input-title">Title</label>
+						<input class="input" type="text" name="note-filter-input-title" id="note-filter-input-title" placeholder="Title" />
+					</div>
+
+					<div class="input-field">
+						<label class="label" for="note-filter-input-date">Date</label>
+						<input class="input" type="date" name="note-filter-input-date" id="note-filter-input-date" placeholder="Date" />
+					</div>
+
+					<div class="input-field">
+						<label class="label" for="note-filter-input-tags">Tags</label>
+						<input class="input" type="text" name="note-filter-input-tags" id="note-filter-input-tags" placeholder="Tags" />
+					</div>
+				</div>
+			</section>
+			<ul class="note-list note-list-all"></ul>
+		</main>
+
+		<dialog class="dialog note-modal">
+			<form class="note-form" action="">
+				<h2 class="note-form-header">Create note</h2>
+
+				<section class="create-note-form-inputs">
+					<div class="input-field">
+						<label class="label" for="title">Title</label>
+						<input class="input note-form-input-title" type="text" name="title" id="title" placeholder="Title" />
+					</div>
+
+					<div class="input-field">
+						<label class="label" for="content">Content</label>
+						<textarea class="input note-form-input-content" rows="5" name="content" id="content" placeholder="Content"></textarea>
+					</div>
+
+					<div class="input-field">
+						<label class="label" for="color">Color</label>
+						<select class="input note-form-select-color" name="color" id="color"></select>
+					</div>
+
+					<div class="input-field">
+						<label class="label" for="tags">Tags</label>
+						<input class="input note-form-input-tags" type="text" name="tags" id="tags" placeholder="Tags" />
+					</div>
+
+					<div>
+						<p class="label">Subtasks</p>
+						<ul class="subtask-list">
+							<li class="subtask-list-item">
+								<input class="input" type="text" name="subtask-1" id="subtask-1" placeholder="Subtask title" />
+
+								<button class="button button-destructive" type="button">remove</button>
+							</li>
+						</ul>
+						<button type="button" class="button button-primary create-subtask-button">create subtask</button>
+					</div>
+				</section>
+
+				<div class="create-note-buttons">
+					<button type="button" class="button button-destructive create-note-cancel-button" autofocus>cancel</button>
+					<button class="button button-primary note-form-submit-button">submit</button>
+				</div>
+			</form>
+		</dialog>
+
+		<script src="./app.js"></script>
+	</body>
+</html>
