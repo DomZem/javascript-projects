@@ -66,9 +66,16 @@
 						<textarea class="input note-form-input-content" rows="5" name="content" id="content" placeholder="Content"></textarea>
 					</div>
 
-					<div class="input-field">
-						<label class="label" for="color">Color</label>
-						<select class="input note-form-select-color" name="color" id="color"></select>
+					<div class="input-field-wrapper">
+						<div class="input-field">
+							<label class="label" for="color">Color</label>
+							<select class="input note-form-select-color" name="color" id="color"></select>
+						</div>
+
+						<div class="input-field">
+							<label class="label" for="remind-at">Remind me at</label>
+							<input class="input note-form-input-remind-at" type="datetime-local" name="remind-at" id="remind-at" placeholder="Remind me at" />
+						</div>
 					</div>
 
 					<div class="input-field">
@@ -96,6 +103,9 @@
 			</form>
 		</dialog>
 
-		<script src="./app.js"></script>
+		<script src="./js/utility.js"></script>
+		<script src="./js/ui.js"></script>
+		<script src="./js/app.js"></script>
+		<script src="./js/worker.js"></script>
 	</body>
 </html>
