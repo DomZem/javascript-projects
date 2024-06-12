@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Particles Animation</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<main class="main">
+			<div id="app">
+				<canvas id="canvas" width="800" height="600"></canvas>
+
+				<section>
+					<form class="settings-animation-form" action="">
+						<h2>Animation Settings</h2>
+						<div class="input-field">
+							<div class="input-field">
+								<label class="label" for="particles-amount-input">Particles Amount (min: 1, max: 200)</label>
+								<input class="input particles-amount-input" type="range" min="1" max="400" value="50" name="particles-amount-input" id="particles-amount-input" />
+								<p>current value: <span class="output particles-amount-output">50</span></p>
+							</div>
+						</div>
+
+						<div class="input-field">
+							<label class="label" for="distance-to-draw-line-input">Distance Between Particles To Draw Line (min: 1, max: 100)</label>
+							<input class="input distance-to-draw-line-input" type="range" min="1" max="100" value="50" name="distance-to-draw-line-input" id="distance-to-draw-line-input" />
+							<p>current value: <span class="output distance-to-draw-line-output">50</span></p>
+						</div>
+
+						<div>
+							<label class="label" for="use-push-pull-input">Use push/pull</label>
+							<input class="input use-push-pull-input" type="checkbox" name="use-push-pull-input" id="use-push-pull-input" />
+						</div>
+
+						<div class="input-field">
+							<label class="label push-pull-label" for="push-pull-input">Push</label>
+							<input class="input push-pull-input" type="checkbox" name="push-pull-input" id="push-pull-input" />
+						</div>
+
+						<div class="input-field">
+							<label class="label" for="">Push/Pull Force</label>
+							<input class="input push-pull-force-input" type="range" min="1" max="200" value="50" name="push-pull-force-input" id="push-pull-force-input" />
+							<p>current value: <span class="output push-pull-force-output">50</span></p>
+						</div>
+					</form>
+
+					<div class="cta-buttons">
+						<button class="button button-primary start-animation-button">Start</button>
+						<button class="button reset-animation-button">Reset</button>
+					</div>
+				</section>
+			</div>
+		</main>
+
+		<script src="./js/utility.js"></script>
+		<script src="./js/particle.js"></script>
+		<script src="./js/app.js"></script>
+	</body>
+</html>
