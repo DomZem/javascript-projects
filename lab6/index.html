@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ball in the hole</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+			integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<main class="main">
+			<article class="home-view view">
+				<div class="view-wrapper">
+					<h1>Ball in the hole</h1>
+					<div class="view-buttons">
+						<button class="button button-primary home-play-button">Play</button>
+						<button class="button home-records-button">Records</button>
+					</div>
+				</div>
+			</article>
+
+			<article class="game-mode-view view hidden">
+				<div class="view-wrapper">
+					<h2>Choose game mode</h2>
+					<div class="view-buttons">
+						<button class="button button-primary one-hole-play-button">One hole</button>
+						<button class="button button-secondary multiple-hole-play-button">Multiple hole</button>
+						<button class="button black-hole-play-button">Black hole</button>
+					</div>
+				</div>
+			</article>
+
+			<article class="records-view view hidden">
+				<div class="view-wrapper">
+					<h2>Records</h2>
+					<ul class="records-list"></ul>
+					<button class="button records-home-button">Home</button>
+				</div>
+			</article>
+
+			<article class="one-hole-game-view view hidden">
+				<div class="view-wrapper one-hole-view-wrapper">
+					<nav class="one-hole-nav">
+						<p class="one-hole-time-left">Time left: <span class="one-hole-time-left-value one-hole-value">0:59</span></p>
+
+						<p class="one-hole-score">Score: <span class="one-hole-score-value one-hole-value">00</span></p>
+					</nav>
+
+					<div class="one-hole-canvas-wrapper">
+						<canvas width="300" height="600" class="one-hole-canvas"></canvas>
+					</div>
+				</div>
+			</article>
+
+			<article class="multiple-hole-game-view hidden">
+				<div>hello from multiple</div>
+			</article>
+
+			<article class="black-hole-game-view hidden">
+				<div>hello from black hole</div>
+			</article>
+		</main>
+
+		<dialog class="modal">
+			<div class="game-over">
+				<h2>Game over</h2>
+				<p>Your score is</p>
+				<h3 class="game-over-score"></h3>
+
+				<div class="game-over-buttons">
+					<button class="button home-button">Home</button>
+					<button class="button button-primary one-hole-restart-game-button">Restart</button>
+				</div>
+			</div>
+		</dialog>
+
+		<script src="./app.js"></script>
+	</body>
+</html>
