@@ -6,7 +6,7 @@ setInterval(() => {
 			const remindAt = new Date(note.remindAt);
 			const now = new Date();
 
-			if (now > remindAt) {
+			if (Math.abs(remindAt.getTime() - now.getTime()) < 1000) {
 				alert(`Reminder: ${note.title}`);
 			}
 		}
