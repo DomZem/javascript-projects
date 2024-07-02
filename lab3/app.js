@@ -46,7 +46,7 @@ let previousTimestamp = 0;
 
 const createNewChannel = () => {
 	const channels = document.querySelectorAll('.channel');
-	const id = ++channels.length;
+	const id = channels.length + 1;
 
 	const channel = document.createElement('li');
 	channel.classList.add('channel');
@@ -85,7 +85,7 @@ const createNewChannel = () => {
 	const runBtn = document.createElement('button');
 	runBtn.classList.add(BUTTON_CLASS);
 	runBtn.classList.add(CHANNEL_RUN_BTN_CLASS);
-	runBtn.textContent = 'Run';
+	runBtn.textContent = 'Play';
 
 	const changeBtn = document.createElement('button');
 	changeBtn.classList.add(BUTTON_CLASS);
@@ -137,7 +137,7 @@ const createMetronom = () => {
 	metronomInputActiveWrapper.classList.add('channel-metronom-input-active-wrapper');
 
 	const channels = document.querySelectorAll('.channel');
-	const id = ++channels.length;
+	const id = channels.length + 1;
 
 	const metronomInputActive = document.createElement('input');
 	metronomInputActive.type = 'checkbox';
@@ -187,6 +187,9 @@ const runChannelSounds = (channelId) => {
 		return;
 	}
 
+	const runBtn = document.querySelector(`#${channelId} .${CHANNEL_RUN_BTN_CLASS}`);
+	runBtn.textContent = 'Playing...';
+
 	let index = 0;
 
 	// check if user set metronom to true
@@ -195,6 +198,11 @@ const runChannelSounds = (channelId) => {
 	const duration = (60 / metronomBpm) * 1000;
 
 	const playNextSound = () => {
+		if (index >= channel.sounds.length) {
+			runBtn.textContent = 'Play';
+			return;
+		}
+
 		const sound = channel.sounds[index];
 		const audio = sounds[sound.key];
 
@@ -206,7 +214,10 @@ const runChannelSounds = (channelId) => {
 		index++;
 
 		if (index < channel.sounds.length) {
-			setTimeout(playNextSound, metronom ? duration : sound.duration);
+			const nextSound = channel.sounds[index];
+			setTimeout(playNextSound, metronom ? duration : nextSound.duration);
+		} else {
+			runBtn.textContent = 'Play';
 		}
 	};
 
@@ -287,6 +298,7 @@ const handleStartChannel = (e) => {
 		const channelId = channelRunBtn.parentElement.parentElement.id;
 		channelRunBtn.textContent = 'Stop';
 		currentlyActiveChannelId = channelId;
+		previousTimestamp = Date.now();
 	}
 };
 
@@ -320,9 +332,3 @@ const handleDeleteChannel = (e) => {
 	memorySounds = memorySounds.filter(({ channelId }) => channelId !== channel.id);
 	channel.remove();
 };
-
-loopSelectedChannelsBtn.addEventListener('click', (e) => {
-	const checkedCheckboxChannels = document.querySelectorAll('.channel-checkbox:checked');
-
-	// TODO: Implement loop functionality
-});
